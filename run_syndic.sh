@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# create empty conf
+mkdir -p /etc/salt/minion.d
+mkdir -p /etc/salt/master.d
+
+touch /etc/salt/minion.d/syndic.conf
+touch /etc/salt/minion.d/minion_port.conf
+touch /etc/salt/master.d/master_port.conf
+touch /etc/salt/master.d/api.conf
+touch /etc/salt/master.d/pillar_roots.conf
+touch /etc/salt/master.d/file_roots.conf
+
 # Setup syndic
 echo "id: $SALT_SYNDIC_ID" > /etc/salt/minion.d/syndic.conf
 echo "master: localhost" >> /etc/salt/minion.d/syndic.conf
