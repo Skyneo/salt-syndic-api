@@ -70,10 +70,10 @@ if [ $status -ne 0 ]; then
   exit $status
 fi
 
-for (( c=1; c<=20; c++ ))
-do
-   salt-key -A -y
-done
+# for (( c=1; c<=20; c++ ))
+# do
+#    salt-key -A -y
+# done
 
 # Naive check runs checks once a minute to see if either of the processes exited.
 # This illustrates part of the heavy lifting you need to do if you want to run
