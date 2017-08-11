@@ -19,6 +19,8 @@ RUN yum install -y salt-api && \
  yum install -y python-cherrypy && \
  yum install -y pyOpenSSL && \
  salt-call --local tls.create_self_signed_cert && \
+ useradd saltapi && \
+ echo "saltapi" | passwd --stdin "saltapi" && \
  yum clean all
 
 ADD run_syndic.sh /root/run_syndic.sh
