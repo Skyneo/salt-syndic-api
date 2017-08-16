@@ -17,4 +17,4 @@ saltmaster:
     - SALT_MASTER_PUBLISH='4505'
     - SALT_MASTER_PORT='4506'
     - SALT_MOM_IP='salt.stack.local'
-    - SALT_API_PORT='8005'
+    - SALT_API_PORT=8005

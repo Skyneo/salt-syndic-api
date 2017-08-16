@@ -18,6 +18,7 @@ RUN yum install -y salt-minion
 RUN yum install -y salt-api && \
  yum install -y python-cherrypy && \
  yum install -y pyOpenSSL && \
+ yum install -y python-ldap && \
  salt-call --local tls.create_self_signed_cert && \
  useradd saltapi && \
  echo "saltapi" | passwd --stdin "saltapi" && \
