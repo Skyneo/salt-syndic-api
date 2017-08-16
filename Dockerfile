@@ -19,10 +19,13 @@ RUN yum install -y salt-api && \
  yum install -y python-cherrypy && \
  yum install -y pyOpenSSL && \
  yum install -y python-ldap && \
+ yum install -y python-pip python-wheel && \
  salt-call --local tls.create_self_signed_cert && \
  useradd saltapi && \
  echo "saltapi" | passwd --stdin "saltapi" && \
  yum clean all
+
+RUN pip install gitpython
 
 ADD run_syndic.sh /root/run_syndic.sh
 RUN chmod a+x /root/run_syndic.sh
