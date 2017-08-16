@@ -3,7 +3,7 @@
 # Setup syndic
 echo "id: $SALT_SYNDIC_ID" > /etc/salt/minion.d/syndic.conf
 echo "master: localhost" >> /etc/salt/minion.d/syndic.conf
-echo "syndic_master: $SALT_MOM_IP" >> /etc/salt/master.d/syndic.conf
+echo "syndic_master: $SALT_MOM_IP" > /etc/salt/master.d/syndic.conf
 echo "master_port: $SALT_MASTER_PORT" > /etc/salt/minion.d/minion_port.conf
 echo "publish_port: $SALT_MASTER_PUBLISH" >> /etc/salt/minion.d/minion_port.conf
 echo "publish_port: $SALT_MASTER_PUBLISH" > /etc/salt/master.d/master_port.conf
