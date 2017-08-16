@@ -1,0 +1,20 @@
+saltmaster:
+  container_name: saltmaster
+  restart: unless-stopped
+  image: smonko/salt-syndic-api
+  ports:
+    - 4505:4505
+    - 4506:4506
+    - 8005:8005
+  volumes:
+    - '/opt/salt/base-etc/certs:/etc/pki/tls/certs:ro'
+    - '/opt/salt/base-etc/pki:/etc/salt/pki:ro'
+    - '/opt/salt/base-etc/master.d:/etc/salt/master.d'
+    - '/opt/salt/base:/opt/salt/base'
+  environment:
+    - SALT_SYNDIC_ID='SaltMaster'
+    - SALT_ENV='base'
+    - SALT_MASTER_PUBLISH='4505'
+    - SALT_MASTER_PORT='4506'
+    - SALT_MOM_IP='salt.stack.local'
+    - SALT_API_PORT='8005'
