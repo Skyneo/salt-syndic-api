@@ -11,6 +11,7 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
  sed -i -e "/hash_type:/c\hash_type: sha256" /etc/salt/master && \
  yum install -y salt-minion && \
  yum install -y salt-api && \
+ yum install -y git && \
  yum install -y python-cherrypy && \
  yum install -y pyOpenSSL && \
  yum install -y python-ldap && \
